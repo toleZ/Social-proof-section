@@ -1,0 +1,133 @@
+$font: 'League Spartan', sans-serif
+
+*
+    margin: 0
+    padding: 0
+    box-sizing: border-box
+    font-family: $font
+
+body
+    min-height: 100vh
+    padding: 2rem
+
+header
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    padding: 1rem
+    text-align: center
+
+.title
+    color: hsl(300, 43%, 22%)
+    padding: 1rem 0
+    letter-spacing: -2px
+    width: 50vw
+
+.paragraph
+    width: 80vw
+    line-height: 18px
+
+.stars,
+.opinions
+    padding: 1rem 1rem 0 1rem
+    display: flex
+    flex-direction: column
+    justify-content: space-around
+    align-items: center
+
+.star
+    background-color: #F7F2F8
+    padding: 1rem
+    border-radius: 8px
+    width: 100%
+    margin-bottom: 1rem
+    display: flex
+    flex-direction: column
+    align-items: center
+    &__name
+        margin-top: 8px
+        font-size: 15px
+        color: hsl(300, 43%, 22%)
+    
+.opinion
+    background-color: hsl(300, 43%, 22%)
+    padding: 1rem
+    margin: .5rem 0
+    border-radius: 8px
+    width: 100%
+
+.user
+    display: flex
+    align-items: center
+    &__avatar
+        border-radius: 100%
+        width: 50px
+        margin: .5rem
+    &__data
+        display: flex
+        flex-direction: column
+        margin-left: .5rem
+    &__name
+        font-size: 1rem
+        color: hsl(0, 0%, 100%)
+        font-weight: 500
+    &__verify
+        font-size: .9rem
+        color: hsl(333, 80%, 67%)
+        font-weight: 400
+        margin-top: .1rem
+    &__opinion
+        margin-top: .5rem
+        color: hsl(0, 0%, 100%)
+        line-height: 20px
+        font-size: 15px
+
+@media screen and (min-width: 1440px)
+    body
+        display: grid
+        grid-template-rows: repeat(2, 50%)
+        grid-template-columns: repeat(2, 50%)
+        grid-template-areas: "header stars" "opinions opinions"
+    
+    header
+        grid-area: header
+        align-items: flex-start
+        text-align: left
+    
+    .title
+        font-size: 2.8rem
+        width: 60%
+
+    .paragraph
+        font-size: 1rem
+        width: 60%
+
+    .stars
+         grid-area: stars
+         padding: 10vh
+    
+    .star
+        flex-direction: row
+        justify-content: space-around
+        width: 60%
+        margin: 0
+        &:first-child
+            align-self: flex-start
+        &:last-child
+            align-self: flex-end
+        &__name
+            margin: 0
+
+    .opinions
+        grid-area: opinions
+        flex-direction: row
+        padding: 2rem 0
+
+    .opinion
+        width: 32%
+        padding: 2rem
+        &:first-child
+            align-self: flex-start
+        &:last-child
+            align-self: flex-end
